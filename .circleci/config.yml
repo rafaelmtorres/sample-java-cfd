@@ -30,6 +30,13 @@ workflows:
   run-test:
     jobs:
       - maven-test
+  run-on-tags:
+    jobs:
+      - maven-test:
+          filters:
+            tags:
+              only: /.*/
+    
 
 jobs:
   echo-message:
